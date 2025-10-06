@@ -1,0 +1,47 @@
+.homeContainer h2 {
+    font-size: 1.6rem;
+}
+
+.dasboardContainer {
+    /* width: 100%;
+    height: 100%; }*/
+    margin-top: 1.2rem;
+    /* background-color: var(--bg-100); */
+    /* border-radius: .6rem; */
+    /* padding: 1.2rem; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: .6rem;
+    grid-row-gap: .6rem;
+    /* outline: solid red; */
+}
+
+.postContainer {
+    grid-area: 1 / 1 / 2 / 4;
+    /* outline: solid blue; */
+}
+
+.photosContainer {
+    grid-area: 1 / 4 / 4 / 6;
+    background-color: green;
+    outline: solid green;
+}
+
+.usersContainer {
+    grid-area: 2 / 1 / 5 / 4;
+    background-color: purple;
+    outline: solid purple;
+}
+
+.todosContainer {
+    grid-area: 4 / 4 / 5 / 6;
+    outline: solid yellowgreen;
+    background-color: yellowgreen;
+}
+
+.commentsContainer {
+    grid-area: 5 / 1 / 6 / 6;
+    outline: pink;
+    background-color: pink;
+}

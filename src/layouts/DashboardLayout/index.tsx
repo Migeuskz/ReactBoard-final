@@ -1,18 +1,19 @@
 import { Outlet } from "react-router-dom";
 import Slidebar from "../../components/Slidebar";
-import './DashBoardLayout.css'
-
+import "./DashBoardLayout.css";
 
 export default function DashboardLayout() {
   return (
     <>
-    <header>
-      <h1>Dashboard Layout</h1>
-    </header>
+      <header>
+        <h1>Dashboard Layout</h1>
+      </header>
       <main>
-        <Slidebar/>
-        <Outlet/>
+        <Slidebar />
+        <div className="containerMain">
+          <Outlet />
+        </div>
       </main>
     </>
-  )
+  );
 }

@@ -1,0 +1,21 @@
+.postCardContainer{
+    border-radius: 1.2rem;
+    background: linear-gradient(0.25turn, var(--primary-100), var(--primary-200));
+    color: var(--bg-100);
+    height: 8.8rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+}
+
+.postCardContainer h3{
+    font-size: 1.6rem;
+    color: var(--bg-100);
+}
+
+.postCardContainer p{
+    font-size: 2.8rem;
+    color: var(--bg-100);
+}
