@@ -1,0 +1,47 @@
+.slidebar{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.6rem;
+    background-color: var(--bg-200);
+    border-right: solid 1px var(--bg-300);
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+
+.slidebar a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    border-radius: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1.2rem;
+    height: 4.2rem;
+}
+
+.slidebar span{
+    width: 30%;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    height: 4.2rem;
+    border-radius: .6rem;
+    background-color: var(--accent-200);
+    color:  var(--bg-100);
+    transition: ease-in .3s;
+}
+
+.slidebar a:hover span{
+    background-color: var(--accent-100);
+}
