@@ -1,5 +1,8 @@
 import PhotosChart from '../../components/PhotosChart'
+import PopularComments from '../../components/PopularComments'
 import PostCard from '../../components/PostsCard'
+import ToDosCard from '../../components/ToDosCard'
+import UserCard from '../../components/UserCard'
 import './Home.css'
 
 export default function Home() {
@@ -13,9 +16,20 @@ export default function Home() {
         <div className='photosContainer'>
           <PhotosChart/>
         </div>
-        <div className='usersContainer'></div>
-        <div className='todosContainer'></div>
-        <div className='commentsContainer'></div>
+        <div className='usersContainer'>
+          <UserCard/>
+          <UserCard/>
+          <UserCard/>
+          <UserCard/>
+        </div>
+        <div className='todosContainer'>
+          <ToDosCard/>
+          <ToDosCard/>
+          <ToDosCard/>
+        </div>
+        <div className='commentsContainer'>
+          <PopularComments/>
+        </div>
       </div>
     </div>
   )
