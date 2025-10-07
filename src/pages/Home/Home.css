@@ -24,9 +24,9 @@
 
 .photosContainer {
     grid-area: 1 / 4 / 4 / 6;
-    background-color: green;
-    outline: solid green;
-}
+    /* background-color: green;
+    outline: solid green; */
+} 
 
 .usersContainer {
     grid-area: 2 / 1 / 5 / 4;
