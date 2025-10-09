@@ -1,5 +1,5 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianAxis, ResponsiveContainer } from 'recharts'
-// import { Line, LineChart, ResponsiveContainer } from 'recharts';
+// import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianAxis, ResponsiveContainer } from 'recharts'
+import { Line, LineChart, ResponsiveContainer } from 'recharts';
 import { useUserPhotosData } from '../../hooks/useUserPhotosData'
 import './PhotosChart.css'
 
@@ -17,16 +17,16 @@ export default function PhotosChart() {
       </h2>
       
       <ResponsiveContainer>
-        <BarChart data={data}>
+        {/* <BarChart data={data}>
           <CartesianAxis strokeDasharray={"3 3"}/>
           <XAxis dataKey="user"/>
           <YAxis/>
           <Tooltip/>
           <Bar dataKey="photos" fill='#4f46e5'/>
-        </BarChart>
-        {/* <LineChart width={300} height={100} data={data}>
+        </BarChart> */}
+        <LineChart width={300} height={100} data={data}>
           <Line type={"monotone"} dataKey={"photos"} stroke='#4f46e5' strokeWidth={2}/>
-        </LineChart> */}
+        </LineChart>
       </ResponsiveContainer>
     </div>
   )

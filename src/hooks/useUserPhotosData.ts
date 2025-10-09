@@ -30,12 +30,21 @@ export const useUserPhotosData = () => {
             (countByUser[album.userId] || 0) + photosOfAlbum.length;
         });
 
+        //Datos reales de jsonplaceHolder
+        // const chartData: UserPhotoCount[] = Object.entries(countByUser).map(
+        //   ([userId, count]) => ({
+        //     user: `User ${userId}`,
+        //     photos: count,
+        //   })
+        // );
+
+        //ejemplo de grafica dinamica
         const chartData: UserPhotoCount[] = Object.entries(countByUser).map(
           ([userId, count]) => ({
             user: `User ${userId}`,
-            photos: count,
+            photos: count - Math.floor(Math.random() * 200),
           })
-        );
+        )
 
         setData(chartData);
       } catch (err) {
