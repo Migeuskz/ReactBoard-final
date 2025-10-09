@@ -30,8 +30,8 @@
 
 .usersContainer {
     grid-area: 2 / 1 / 5 / 4;
-    background-color: purple;
-    outline: solid purple;
+    /* background-color: purple;
+    outline: solid purple; */
 }
 
 .todosContainer {

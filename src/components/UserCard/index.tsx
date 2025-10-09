@@ -1,9 +1,16 @@
 import './UserCard.css'
+import type { User } from '../../types/users'
 
-export default function UserCard() {
+type UserCardProps = {
+  user: User;
+}
+
+export default function UserCard({user} : UserCardProps) {
+
   return (
     <div>
-      UserCard
+      <h3>{user.name}</h3>
+      <p>{user.email}</p>
     </div>
   )
 }

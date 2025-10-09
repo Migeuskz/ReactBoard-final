@@ -1,11 +1,21 @@
+import  { useUserData } from '../../hooks/useUserData'
 import PhotosChart from '../../components/PhotosChart'
 import PopularComments from '../../components/PopularComments'
 import PostCard from '../../components/PostsCard'
 import ToDosCard from '../../components/ToDosCard'
 import UserCard from '../../components/UserCard'
+import Spinner from '../../components/Spinner'
 import './Home.css'
 
 export default function Home() {
+
+  const { data, loading, error } = useUserData();
+
+  if(loading) return <Spinner/>
+  if(error) return <p>{error}</p>
+
+  const topCincoUsers = data.slice(0,5);
+
   return (
     <div className='homeContainer'>
       <h2>Home</h2>
@@ -17,10 +27,9 @@ export default function Home() {
           <PhotosChart/>
         </div>
         <div className='usersContainer'>
-          <UserCard/>
-          <UserCard/>
-          <UserCard/>
-          <UserCard/>
+          { topCincoUsers.map(user => {
+            return <UserCard key={user.id} user={user}/>
+          })}
         </div>
         <div className='todosContainer'>
           <ToDosCard/>
