@@ -33,7 +33,7 @@ export const useUserPhotosData = () => {
         const chartData: UserPhotoCount[] = Object.entries(countByUser).map(
           ([userId, count]) => ({
             user: `User ${userId}`,
-            photos: count,
+            photos: count - Math.floor(Math.random() * 200), 
           })
         );
 
