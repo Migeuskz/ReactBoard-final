@@ -9,7 +9,16 @@
 //   ResponsiveContainer,
 //   Legend,
 // } from "recharts";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 import { useUserPhotosData } from "../../hooks/useUserPhotosData";
 import "./PhotosChart.css";
 import Spinner from "../Spinner";
@@ -26,7 +35,7 @@ export default function PhotosChart() {
         Fotos subidas por usuario
       </h2>
 
-      <ResponsiveContainer width="100%" height="100%" >
+      <ResponsiveContainer>
         {/* <BarChart data={data}>
           <CartesianAxis strokeDasharray={"3 3"}/>
           <XAxis dataKey="user"/>
@@ -63,24 +72,37 @@ export default function PhotosChart() {
             </RadarChart>
             */}
 
-         <AreaChart
-        width={500}
-        height={400}
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 0,
-          bottom: 0,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="user" />
-        <YAxis />
-        <Tooltip />
-        <Area type="monotone" dataKey="albums" stackId="1" stroke="#8884d8" fill="#8884d8" />
-        <Area type="monotone" dataKey="photos" stackId="1" stroke="#82ca9d" fill="#82ca9d" />                
-      </AreaChart>
+        <AreaChart
+          width={500}
+          height={400}
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="user" />
+          <YAxis />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey="photos"
+            stackId="1"
+            stroke="#757de8"
+            fill="#757de8"
+          />
+          <Area
+            type="monotone"
+            dataKey="albums"
+            stackId="1"
+            stroke="#2196F3"
+            fill="#2196F3"
+          />
+          <Legend layout="horizontal" verticalAlign="bottom" align="center" />
+        </AreaChart>
       </ResponsiveContainer>
     </div>
   );
