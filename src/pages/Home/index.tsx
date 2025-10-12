@@ -27,6 +27,7 @@ export default function Home() {
           <PhotosChart/>
         </div>
         <div className='usersContainer'>
+          <p>Usuarios Destacados</p>
           { topCincoUsers.map(user => {
             return <UserCard key={user.id} user={user}/>
           })}

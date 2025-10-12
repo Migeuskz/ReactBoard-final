@@ -28,6 +28,7 @@ export const useUserPhotosData = () => {
           );
           countByUser[album.userId] =
             (countByUser[album.userId] || 0) + photosOfAlbum.length;
+            countByUser[album.userId] += 1; //agregando 1 por cada album (1 foto de portada)
         });
 
         //Datos reales de jsonplaceHolder
@@ -43,6 +44,7 @@ export const useUserPhotosData = () => {
           ([userId, count]) => ({
             user: `User ${userId}`,
             photos: count - Math.floor(Math.random() * 200), 
+            albums: count - Math.floor(Math.random() * 50),
           })
         )
 

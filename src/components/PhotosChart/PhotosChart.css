@@ -1,0 +1,5 @@
+.radarLegend{
+    display: flex;
+    outline: solid orange;
+    height: 5rem;
+}

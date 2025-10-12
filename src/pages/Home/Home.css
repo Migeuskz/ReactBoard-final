@@ -12,26 +12,34 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: .6rem;
-    grid-row-gap: .6rem;
-    /* outline: solid red; */
+    /* grid-column-gap: .6rem; */
+    /* grid-row-gap: .6rem; */
+    outline: solid red;
+    padding: 0;
+    margin: 0;
 }
 
 .postContainer {
     grid-area: 1 / 1 / 2 / 4;
-    /* outline: solid blue; */
+    height: 11rem;
+    outline: solid blue;
+    margin: 0;
 }
 
 .photosContainer {
     grid-area: 1 / 4 / 4 / 6;
     /* background-color: green;
     outline: solid green; */
+    ;
 } 
 
 .usersContainer {
     grid-area: 2 / 1 / 5 / 4;
-    /* background-color: purple;
-    outline: solid purple; */
+    /* background-color: purple;*/
+    outline: solid purple; 
+    gap: 1.2rem;overflow: auto;
+    height: 100%;
+    padding: 1rem 0
 }
 
 .todosContainer {

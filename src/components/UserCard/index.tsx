@@ -1,16 +1,19 @@
-import './UserCard.css'
-import type { User } from '../../types/users'
+import "./UserCard.css";
+import type { User } from "../../types/users";
 
 type UserCardProps = {
   user: User;
-}
+};
 
-export default function UserCard({user} : UserCardProps) {
-
+export default function UserCard({ user }: UserCardProps) {
   return (
-    <div>
-      <h3>{user.name}</h3>
-      <p>{user.email}</p>
+    <div className="user-card">
+      <img src={`/src/assets/users/${user.id}.jpg`} alt={user.name} />
+      <article>
+        <h3>{user.name}</h3>
+        <p>{user.username}</p>
+        <p>{user.email}</p>
+      </article>
     </div>
-  )
+  );
 }
