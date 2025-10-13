@@ -17,7 +17,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  Legend,
+  
 } from "recharts";
 import { useUserPhotosData } from "../../hooks/useUserPhotosData";
 import "./PhotosChart.css";
@@ -30,7 +30,7 @@ export default function PhotosChart() {
   if (error) return <p>{error}</p>;
 
   return (
-    <div style={{ width: "100%", height: 300 }}>
+    <div style={{ width: "100%", height: 260 }}>
       <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>
         Fotos subidas por usuario
       </h2>
@@ -101,7 +101,7 @@ export default function PhotosChart() {
             stroke="#2196F3"
             fill="#2196F3"
           />
-          <Legend layout="horizontal" verticalAlign="bottom" align="center" />
+          {/* <Legend layout="horizontal" verticalAlign="bottom" align="center" /> */}
         </AreaChart>
       </ResponsiveContainer>
     </div>

@@ -5,45 +5,46 @@
 .dasboardContainer {
     /* width: 100%;
     height: 100%; }*/
-    margin-top: 1.2rem;
+    /* margin-top: 1.2rem; */
     /* background-color: var(--bg-100); */
     /* border-radius: .6rem; */
     /* padding: 1.2rem; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    /* grid-column-gap: .6rem; */
-    /* grid-row-gap: .6rem; */
-    outline: solid red;
-    padding: 0;
-    margin: 0;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    /* outline: solid red; */
 }
 
 .postContainer {
+    /* grid-area: fila-inicio / columna-inicio / fila-fin / columna-fin; */
     grid-area: 1 / 1 / 2 / 4;
-    height: 11rem;
-    outline: solid blue;
-    margin: 0;
+    margin-bottom: 1rem;
+    /* outline: solid blue; */
 }
 
 .photosContainer {
     grid-area: 1 / 4 / 4 / 6;
     /* background-color: green;
     outline: solid green; */
-    ;
 } 
 
 .usersContainer {
     grid-area: 2 / 1 / 5 / 4;
     /* background-color: purple;*/
-    outline: solid purple; 
-    gap: 1.2rem;overflow: auto;
-    height: 100%;
-    padding: 1rem 0
+    /* outline: solid purple;  */
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+.usersContainer h2{
+    margin-bottom: 1rem;
 }
 
 .todosContainer {
-    grid-area: 4 / 4 / 5 / 6;
+    grid-area: 3 / 4 / 5 / 6;
     outline: solid yellowgreen;
     background-color: yellowgreen;
 }
