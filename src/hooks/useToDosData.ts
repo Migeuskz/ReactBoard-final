@@ -3,19 +3,19 @@ import { getToDos } from "../api/todosApi";
 import type { ToDo } from "../types/todos";
 
 export const useToDosData = () => {
-    const [data, setData] = useState<ToDo[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const [toDos, setToDos] = useState<ToDo[]>([]);
+    const [loadingToDos, setLoadingToDos] = useState<boolean>(true);
+    const [errorToDos, setErrorToDos] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const todos = await getToDos();
-                setData(todos);
-                setLoading(false);
+                setToDos(todos);
+                setLoadingToDos(false);
             } catch (error) {
-                setError("Error al cargar los datos");
-                setLoading(false);
+                setErrorToDos("Error al cargar los datos");
+                setLoadingToDos(false);
                 console.error("Ocurrio un error: " + error)
             }
         };
@@ -23,5 +23,5 @@ export const useToDosData = () => {
         fetchData();
     },[]);
 
-    return { data, loading, error };
+    return { toDos, loadingToDos, errorToDos };
 }

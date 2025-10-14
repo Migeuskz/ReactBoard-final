@@ -6,15 +6,18 @@ import ToDosCard from '../../components/ToDosCard'
 import UserCard from '../../components/UserCard'
 import Spinner from '../../components/Spinner'
 import './Home.css'
+import { useToDosData } from '../../hooks/useToDosData'
 
 export default function Home() {
 
   const { data, loading, error } = useUserData();
+  const { toDos, loadingToDos, errorToDos } = useToDosData();
 
-  if(loading) return <Spinner/>
-  if(error) return <p>{error}</p>
+  if(loading || loadingToDos) return <Spinner/>
+  if(error || errorToDos) return <p>{error || errorToDos}</p>
 
   const topCincoUsers = data.slice(0,5);
+  const topCincoToDos =toDos.slice(0,5);
 
   return (
     <div className='homeContainer'>
@@ -33,9 +36,9 @@ export default function Home() {
           })}
         </div>
         <div className='todosContainer'>
-          <ToDosCard/>
-          <ToDosCard/>
-          <ToDosCard/>
+          { topCincoToDos.map( toDo => {
+            return <ToDosCard key={toDo.id} toDo={toDo} />
+          })}
         </div>
         <div className='commentsContainer'>
           <PopularComments/>
