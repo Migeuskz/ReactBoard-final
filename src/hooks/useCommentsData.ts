@@ -3,19 +3,19 @@ import { getCommets } from "../api/commetsApi";
 import type { Comment } from "../types/comments";
 
 export const useCommentsData = () => {
-    const [data, setData] = useState<Comment[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const [dataComments, setDataComments] = useState<Comment[]>([]);
+    const [loadingComments, setLoadingComments] = useState<boolean>(true);
+    const [errorComments, setErrorComments] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const comments = await getCommets();
-                setData(comments);
-                setLoading(false);
+                setDataComments(comments);
+                setLoadingComments(false);
             } catch (error) {
-                setError("Error al cargar los datos");
-                setLoading(false);
+                setErrorComments("Error al cargar los datos");
+                setLoadingComments(false);
                 console.error("Ocurrio un error: " + error);
             }
         };
@@ -23,5 +23,5 @@ export const useCommentsData = () => {
         fetchData();
     }, []);
 
-    return { data,  loading, error };
+    return { dataComments,  loadingComments, errorComments };
 }

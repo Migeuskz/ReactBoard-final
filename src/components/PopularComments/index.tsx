@@ -1,9 +1,16 @@
+import type { Comment } from '../../types/comments';
 import './PopularComments.css'
 
-export default function PopularComments() {
+type PopularCommentsProps = {
+  comments: Comment;
+}
+
+export default function PopularComment({comments} : PopularCommentsProps) {
   return (
-    <div>
-      Photo component
-    </div>
+    <article className=''>
+      <h3>{comments.name}</h3>
+      <p>{comments.body}</p>
+      <p><strong>Email:</strong> {comments.email}</p>
+    </article>
   )
 }

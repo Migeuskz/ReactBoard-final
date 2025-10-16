@@ -5,19 +5,22 @@ import PostCard from '../../components/PostsCard'
 import ToDosCard from '../../components/ToDosCard'
 import UserCard from '../../components/UserCard'
 import Spinner from '../../components/Spinner'
-import './Home.css'
 import { useToDosData } from '../../hooks/useToDosData'
+import { useCommentsData } from '../../hooks/useCommentsData'
+import './Home.css'
 
 export default function Home() {
 
   const { data, loading, error } = useUserData();
   const { toDos, loadingToDos, errorToDos } = useToDosData();
+  const { dataComments, loadingComments, errorComments } = useCommentsData();
 
-  if(loading || loadingToDos) return <Spinner/>
-  if(error || errorToDos) return <p>{error || errorToDos}</p>
+  if(loading || loadingToDos || loadingComments) return <Spinner/>
+  if(error || errorToDos || errorComments) return <p>{error || errorToDos}</p>
 
   const topCincoUsers = data.slice(0,5);
   const topCincoToDos =toDos.slice(0,5);
+  const topDiezComments = dataComments.slice(0,10);
 
   return (
     <div className='homeContainer'>
@@ -41,7 +44,9 @@ export default function Home() {
           })}
         </div>
         <div className='commentsContainer'>
-          <PopularComments/>
+          { topDiezComments.map( comment => {
+            return <PopularComments key={comment.id} comments={comment}/>
+          })}
         </div>
       </div>
     </div>
