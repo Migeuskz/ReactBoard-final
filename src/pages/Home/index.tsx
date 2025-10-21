@@ -19,7 +19,7 @@ export default function Home() {
   if(error || errorToDos || errorComments) return <p>{error || errorToDos}</p>
 
   const topCincoUsers = data.slice(0,5);
-  const topCincoToDos =toDos.slice(0,5);
+  const topCincoToDos =toDos.slice(0,3);
   const topDiezComments = dataComments.slice(0,10);
 
   return (
